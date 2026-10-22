@@ -4,51 +4,54 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#302b7c">
-  <meta name="description" content="Perfil de Christian Serrano y guía interactiva sobre arquitectura desacoplada.">
-  <title>Christian Serrano | Arquitectura desacoplada</title>
+  <meta name="description" content="Guía visual e interactiva sobre arquitectura desacoplada, sus tecnologías y aplicaciones.">
+  <title>Arquitectura desacoplada | Guía interactiva</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="topbar">
     <div class="nav-wrap">
-      <a class="brand" href="#perfil" aria-label="Ir al perfil">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
         <img class="brand-logo" src="img/logo.png" alt="Universidad Técnica de Cotopaxi">
       </a>
       <nav aria-label="Navegación principal">
         <ul>
-          <li><a href="#perfil">Perfil</a></li>
-          <li><a href="#arquitectura">Arquitectura Desacoplada</a></li>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#que-es">Concepto</a></li>
+          <li><a href="#como-funciona">Funcionamiento</a></li>
+          <li><a href="#historia">Historia</a></li>
+          <li><a href="#tecnologias">Tecnologías</a></li>
+          <li><a href="#sectores">Sectores</a></li>
           <li><a href="#video">Video Explicativo</a></li>
-          <li><a href="#quiz">Quiz Interactivo</a></li>
+          <li><a href="#quiz">Ruleta quiz</a></li>
+          <li><a href="#creador">Creador</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="section" id="perfil" aria-labelledby="profile-title">
-      <div class="container">
-        <p class="eyebrow">Presentación · 01</p>
-        <h1 id="profile-title">Christian<br>Serrano<span>.</span></h1>
-        <p class="lede">Estudiante de Ingeniería de Software, amante de los videojuegos y explorador de las ideas que conectan tecnología y diseño.</p>
-        <div class="profile-grid">
-          <div class="portrait-frame">
-            <img src="img/foto_perfil.png" alt="Fotografía de perfil">
+    <section class="hero-section" id="inicio" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Tecnología · Sistemas conectados</p>
+          <h1 id="hero-title">Arquitectura<br>desacoplada<span>.</span></h1>
+          <p class="lede">Diseña sistemas donde cada pieza puede evolucionar a su ritmo. Explora cómo se conectan la interfaz, los servicios y los datos.</p>
+          <a class="hero-link" href="#que-es">Explorar la arquitectura <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-tech">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Circuitos y componentes de una placa tecnológica" fetchpriority="high">
+          <div class="hero-overlay">
+            <span class="hero-tag">SISTEMA MODULAR</span>
+            <div class="mini-flow"><span>Frontend</span><b aria-hidden="true">↔</b><span>API</span><b aria-hidden="true">↔</b><span>Backend</span></div>
           </div>
-          <table class="data-table" aria-label="Datos personales">
-            <tbody>
-              <tr><th scope="row">Nombre</th><td>Brandon Israel</td></tr>
-              <tr><th scope="row">Apellido</th><td>Lema Gallardo</td></tr>
-              <tr><th scope="row">Email</th><td><a href="mailto:israellema1700@gmail.com">israellema1700@gmail.com</a></td></tr>
-              <tr><th scope="row">Dirección</th><td>Cotopaxi</td></tr>
-              <tr><th scope="row">Acerca de mí</th><td>Estudiante de Ingeniería de Software, amante de los videojuegos.</td></tr>
-            </tbody>
-          </table>
+          <span class="hero-counter">01 <i>/</i> 08</span>
         </div>
       </div>
+      <div class="container hero-ribbon"><span>Contratos claros</span><span>Servicios independientes</span><span>Evolución continua</span></div>
     </section>
 
-    <section class="section" id="arquitectura" aria-labelledby="architecture-title">
+    <section class="section" id="que-es" aria-labelledby="architecture-title">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Sistemas · 02</p>
@@ -100,6 +103,116 @@
       </div>
     </section>
 
+    <section class="section" id="como-funciona" aria-labelledby="function-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">El recorrido de una petición · 02</p>
+          <h2 id="function-title">Cómo funciona</h2>
+          <p class="theory-intro">Cada componente se ocupa de una responsabilidad y se comunica a través de un contrato. Así, una interfaz web, una aplicación móvil u otro cliente pueden consumir las mismas capacidades del servidor.</p>
+        </div>
+        <div class="step-grid">
+          <article class="step-card"><span>01</span><h3>El cliente solicita</h3><p>La interfaz envía una petición con los datos y credenciales necesarios.</p></article>
+          <article class="step-card"><span>02</span><h3>La API enruta</h3><p>El contrato define el formato, el endpoint y las reglas de validación.</p></article>
+          <article class="step-card"><span>03</span><h3>El servicio resuelve</h3><p>El backend aplica la lógica de negocio y consulta los datos requeridos.</p></article>
+          <article class="step-card"><span>04</span><h3>La respuesta regresa</h3><p>El cliente interpreta el resultado y actualiza la experiencia de usuario.</p></article>
+        </div>
+        <div class="visual-grid" aria-label="Imágenes sobre tecnologías y sistemas distribuidos">
+          <figure class="visual-card visual-card-wide">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Infraestructura de servidores que aloja servicios digitales" loading="lazy">
+            <figcaption><span>Infraestructura</span><strong>Servicios que escalan por separado</strong></figcaption>
+          </figure>
+          <figure class="visual-card">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Equipo de desarrollo colaborando en una solución tecnológica" loading="lazy">
+            <figcaption><span>Colaboración</span><strong>Equipos y componentes autónomos</strong></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="historia" aria-labelledby="history-title">
+      <div class="container history-layout">
+        <div class="section-heading">
+          <p class="eyebrow">De cliente-servidor a servicios · 03</p>
+          <h2 id="history-title">Una idea que evoluciona</h2>
+          <p class="theory-intro">La separación de responsabilidades no nació de una única tecnología. Se desarrolló junto con las aplicaciones cliente-servidor, las arquitecturas de tres capas y la orientación a servicios. La web moderna la hizo más visible al separar interfaces ricas de APIs reutilizables.</p>
+        </div>
+        <ol class="timeline">
+          <li><span>01</span><div><h3>Cliente-servidor</h3><p>La interfaz y el procesamiento comienzan a ejecutarse en máquinas y procesos distintos.</p></div></li>
+          <li><span>02</span><div><h3>Tres capas y SOA</h3><p>Presentación, negocio y datos adquieren límites más claros; los servicios exponen capacidades compartidas.</p></div></li>
+          <li><span>03</span><div><h3>Web APIs y cloud</h3><p>Aplicaciones web y móviles consumen APIs. La nube facilita escalar y desplegar componentes por separado.</p></div></li>
+          <li><span>04</span><div><h3>Microservicios y serverless</h3><p>Algunos equipos llevan la autonomía más lejos, asumiendo también mayor complejidad operativa.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="caracteristicas" aria-labelledby="traits-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Diseño con límites explícitos · 04</p>
+          <h2 id="traits-title">Características, ventajas y retos</h2>
+          <p class="theory-intro">Desacoplar no significa eliminar dependencias, sino hacerlas explícitas y manejables. La separación aporta opciones, pero requiere disciplina para que los contratos y la operación sigan siendo confiables.</p>
+        </div>
+        <div class="feature-columns">
+          <article class="feature-panel">
+            <p class="panel-kicker">FORTALEZAS</p>
+            <h3>Qué aporta</h3>
+            <ul>
+              <li>Escalado independiente según la demanda de cada componente.</li>
+              <li>Libertad para elegir tecnologías adecuadas a cada capa.</li>
+              <li>Despliegues y ciclos de entrega que pueden avanzar por separado.</li>
+              <li>Reutilización de APIs en web, móvil e integraciones externas.</li>
+            </ul>
+          </article>
+          <article class="feature-panel feature-panel-alt">
+            <p class="panel-kicker">PUNTOS A CUIDAR</p>
+            <h3>Qué cuesta</h3>
+            <ul>
+              <li>Más trabajo de integración, monitoreo y trazabilidad entre servicios.</li>
+              <li>Latencia de red y nuevos puntos de fallo en la comunicación.</li>
+              <li>Versionado y compatibilidad de contratos entre equipos.</li>
+              <li>Infraestructura y conocimientos operativos adicionales.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="principle-strip"><strong>Regla práctica</strong><span>Elige la menor separación que permita a tu equipo desplegar, cambiar y escalar con independencia real.</span></div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="tecnologias" aria-labelledby="technology-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">El stack depende del problema · 05</p>
+          <h2 id="technology-title">Programas, lenguajes y datos</h2>
+          <p class="theory-intro">No existe un stack obligatorio para desacoplar una arquitectura. Se combinan herramientas según el equipo, el dominio, la escala y los requisitos de operación.</p>
+        </div>
+        <div class="stack-grid">
+          <article class="stack-card"><span class="stack-number">01</span><h3>Interfaces</h3><p>React, Vue, Angular y Svelte crean aplicaciones de cliente que consumen APIs.</p><small>HTML · CSS · JavaScript · TypeScript</small></article>
+          <article class="stack-card"><span class="stack-number">02</span><h3>Servicios y APIs</h3><p>Node.js con Express o NestJS, Java con Spring, Python con FastAPI o Django, .NET y Go.</p><small>REST · GraphQL · WebSockets</small></article>
+          <article class="stack-card"><span class="stack-number">03</span><h3>Persistencia</h3><p>PostgreSQL y MySQL para datos relacionales; MongoDB para documentos; Redis para caché y datos en memoria.</p><small>SQL · NoSQL · caché</small></article>
+          <article class="stack-card"><span class="stack-number">04</span><h3>Entrega y operación</h3><p>Docker, Kubernetes, GitHub Actions y servicios cloud ayudan a empaquetar, automatizar y operar componentes.</p><small>Contenedores · CI/CD · observabilidad</small></article>
+        </div>
+        <p class="stack-note">Las bases de datos no se comparten automáticamente entre servicios: cada contexto debe definir quién es responsable de sus datos y cómo los expone.</p>
+      </div>
+    </section>
+
+    <section class="section" id="sectores" aria-labelledby="sectors-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Sistemas en el mundo real · 06</p>
+          <h2 id="sectors-title">¿Dónde se utiliza?</h2>
+          <p class="theory-intro">Es útil cuando varios canales necesitan las mismas capacidades, cuando distintas partes del producto cambian a ritmos diferentes o cuando la escala exige tratar cada carga de manera específica.</p>
+        </div>
+        <div class="sector-grid">
+          <article><span aria-hidden="true">01</span><h3>Comercio electrónico</h3><p>Catálogo, pagos, inventario y experiencia de compra como capacidades integrables.</p></article>
+          <article><span aria-hidden="true">02</span><h3>Banca y fintech</h3><p>Canales web y móviles que consumen servicios de cuentas, pagos y notificaciones.</p></article>
+          <article><span aria-hidden="true">03</span><h3>Salud y educación</h3><p>Portales, aplicaciones y sistemas institucionales conectados por APIs controladas.</p></article>
+          <article><span aria-hidden="true">04</span><h3>Medios y streaming</h3><p>Entrega de contenido, perfiles, recomendaciones y eventos en tiempo real.</p></article>
+          <article><span aria-hidden="true">05</span><h3>Logística e IoT</h3><p>Dispositivos, paneles de seguimiento y servicios que intercambian eventos continuamente.</p></article>
+          <article><span aria-hidden="true">06</span><h3>Gobierno y servicios</h3><p>Plataformas que integran trámites y datos de distintas entidades y sistemas.</p></article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="video" aria-labelledby="video-title">
       <div class="container">
         <div class="section-heading">
@@ -116,79 +229,74 @@
       </div>
     </section>
 
-    <section class="section" id="quiz" aria-labelledby="quiz-title">
+    <section class="section roulette-section" id="quiz" aria-labelledby="quiz-title">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Comprueba lo aprendido · 04</p>
-          <h2 id="quiz-title">Quiz interactivo</h2>
-          <p class="theory-intro">Seis preguntas sobre la arquitectura desacoplada, sus canales de comunicación y los conceptos presentados en esta explicación.</p>
+          <p class="eyebrow">Aprende jugando · 08</p>
+          <h2 id="quiz-title">Ruleta de arquitectura</h2>
+          <p class="theory-intro">Gira la ruleta, descubre una pregunta al azar y suma puntos. Los temas cubren desde los conceptos básicos hasta tecnologías y sectores.</p>
         </div>
-        <form class="quiz-form" id="quiz-form">
-          <fieldset class="question">
-            <legend><span>01</span>¿Qué caracteriza principalmente a una arquitectura desacoplada?</legend>
-            <div class="options">
-              <div class="option"><input id="q1a" type="radio" name="q1" value="a" required><label for="q1a"><span class="option-key">A</span>Frontend y backend comparten una única implementación.</label></div>
-              <div class="option"><input id="q1b" type="radio" name="q1" value="b"><label for="q1b"><span class="option-key">B</span>Presentación y lógica de negocio se separan con contratos explícitos.</label></div>
-              <div class="option"><input id="q1c" type="radio" name="q1" value="c"><label for="q1c"><span class="option-key">C</span>La aplicación deja de necesitar comunicación entre componentes.</label></div>
-              <div class="option"><input id="q1d" type="radio" name="q1" value="d"><label for="q1d"><span class="option-key">D</span>Todos los datos se almacenan dentro del navegador.</label></div>
+        <div class="roulette-layout">
+          <div class="roulette-column">
+            <div class="wheel-frame">
+              <span class="wheel-pointer" aria-hidden="true"></span>
+              <div class="wheel-disk" id="wheel-disk" aria-hidden="true">
+                <span class="wheel-number number-1">1</span><span class="wheel-number number-2">2</span>
+                <span class="wheel-number number-3">3</span><span class="wheel-number number-4">4</span>
+                <span class="wheel-number number-5">5</span><span class="wheel-number number-6">6</span>
+                <span class="wheel-number number-7">7</span><span class="wheel-number number-8">8</span>
+              </div>
             </div>
-          </fieldset>
-          <fieldset class="question">
-            <legend><span>02</span>¿Qué mecanismo encaja mejor con una interacción HTTP basada en recursos?</legend>
-            <div class="options">
-              <div class="option"><input id="q2a" type="radio" name="q2" value="a" required><label for="q2a"><span class="option-key">A</span>REST, mediante solicitudes y respuestas HTTP.</label></div>
-              <div class="option"><input id="q2b" type="radio" name="q2" value="b"><label for="q2b"><span class="option-key">B</span>Una hoja de estilos CSS compartida.</label></div>
-              <div class="option"><input id="q2c" type="radio" name="q2" value="c"><label for="q2c"><span class="option-key">C</span>Un proceso de compilación local.</label></div>
-              <div class="option"><input id="q2d" type="radio" name="q2" value="d"><label for="q2d"><span class="option-key">D</span>Una consulta directa a la base de datos desde la interfaz.</label></div>
-            </div>
-          </fieldset>
-          <fieldset class="question">
-            <legend><span>03</span>¿Cuándo resulta especialmente útil una conexión WebSocket?</legend>
-            <div class="options">
-              <div class="option"><input id="q3a" type="radio" name="q3" value="a" required><label for="q3a"><span class="option-key">A</span>Para intercambiar eventos de forma persistente y bidireccional.</label></div>
-              <div class="option"><input id="q3b" type="radio" name="q3" value="b"><label for="q3b"><span class="option-key">B</span>Para reemplazar todas las reglas de negocio.</label></div>
-              <div class="option"><input id="q3c" type="radio" name="q3" value="c"><label for="q3c"><span class="option-key">C</span>Para convertir CSS en datos JSON.</label></div>
-              <div class="option"><input id="q3d" type="radio" name="q3" value="d"><label for="q3d"><span class="option-key">D</span>Únicamente para servir imágenes estáticas.</label></div>
-            </div>
-          </fieldset>
-          <fieldset class="question">
-            <legend><span>04</span>¿Qué permite la escalabilidad horizontal independiente?</legend>
-            <div class="options">
-              <div class="option"><input id="q4a" type="radio" name="q4" value="a" required><label for="q4a"><span class="option-key">A</span>Añadir capacidad al componente que tiene mayor demanda.</label></div>
-              <div class="option"><input id="q4b" type="radio" name="q4" value="b"><label for="q4b"><span class="option-key">B</span>Evitar que frontend y backend se comuniquen.</label></div>
-              <div class="option"><input id="q4c" type="radio" name="q4" value="c"><label for="q4c"><span class="option-key">C</span>Usar obligatoriamente el mismo framework en todas las capas.</label></div>
-              <div class="option"><input id="q4d" type="radio" name="q4" value="d"><label for="q4d"><span class="option-key">D</span>Eliminar la necesidad de supervisar el sistema.</label></div>
-            </div>
-          </fieldset>
-          <fieldset class="question">
-            <legend><span>05</span>¿Qué condición ayuda a lograr un despliegue sin interrupción global?</legend>
-            <div class="options">
-              <div class="option"><input id="q5a" type="radio" name="q5" value="a" required><label for="q5a"><span class="option-key">A</span>Compatibilidad entre versiones y retirada gradual de instancias.</label></div>
-              <div class="option"><input id="q5b" type="radio" name="q5" value="b"><label for="q5b"><span class="option-key">B</span>Desconectar todos los servicios durante cada publicación.</label></div>
-              <div class="option"><input id="q5c" type="radio" name="q5" value="c"><label for="q5c"><span class="option-key">C</span>Evitar probar los cambios antes de desplegarlos.</label></div>
-              <div class="option"><input id="q5d" type="radio" name="q5" value="d"><label for="q5d"><span class="option-key">D</span>Publicar siempre frontend y backend como un único bloque.</label></div>
-            </div>
-          </fieldset>
-          <fieldset class="question">
-            <legend><span>06</span>¿Cuál es un reto común frente a un monolito tradicional?</legend>
-            <div class="options">
-              <div class="option"><input id="q6a" type="radio" name="q6" value="a" required><label for="q6a"><span class="option-key">A</span>Mayor esfuerzo para coordinar integración y contratos entre componentes.</label></div>
-              <div class="option"><input id="q6b" type="radio" name="q6" value="b"><label for="q6b"><span class="option-key">B</span>Imposibilidad de elegir tecnologías distintas.</label></div>
-              <div class="option"><input id="q6c" type="radio" name="q6" value="c"><label for="q6c"><span class="option-key">C</span>Ausencia total de puntos de comunicación.</label></div>
-              <div class="option"><input id="q6d" type="radio" name="q6" value="d"><label for="q6d"><span class="option-key">D</span>Obligación de desplegar todos los componentes a la vez.</label></div>
-            </div>
-          </fieldset>
-          <div class="quiz-actions">
-            <button class="button" type="submit">Comprobar respuestas</button>
-            <button class="button button-secondary" type="reset">Reiniciar</button>
+            <button class="button spin-button" id="spin-button" type="button">Girar la ruleta</button>
+            <p class="scoreboard" id="scoreboard">Puntos: <strong>0</strong></p>
           </div>
-          <p class="quiz-result" id="quiz-result" role="status" aria-live="polite"></p>
-        </form>
+          <div class="quiz-play">
+            <div class="topic-list" aria-label="Temas de la ruleta">
+              <span><i class="topic-dot dot-1"></i>Qué es</span><span><i class="topic-dot dot-2"></i>Cómo funciona</span>
+              <span><i class="topic-dot dot-3"></i>Historia</span><span><i class="topic-dot dot-4"></i>Características</span>
+              <span><i class="topic-dot dot-5"></i>Ventajas</span><span><i class="topic-dot dot-6"></i>Desventajas</span>
+              <span><i class="topic-dot dot-7"></i>Tecnologías</span><span><i class="topic-dot dot-8"></i>Sectores</span>
+            </div>
+            <div class="question-stage" aria-live="polite" aria-atomic="true">
+              <p class="selected-topic" id="selected-topic">ESPERANDO EL GIRO</p>
+              <h3 id="question-title">¿Qué tema te tocará?</h3>
+              <div class="answer-list" id="answer-list"></div>
+              <p class="answer-feedback" id="answer-feedback"></p>
+            </div>
+            <p class="quiz-progress" id="quiz-progress">Pulsa “Girar la ruleta” para comenzar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section creator-section" id="creador" aria-labelledby="creator-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Proyecto académico · 09</p>
+          <h2 id="creator-title">Información del creador</h2>
+        </div>
+        <div class="profile-grid">
+          <div class="portrait-frame">
+            <img src="img/foto_perfil.png" alt="Fotografía del creador del proyecto" loading="lazy">
+          </div>
+          <div class="creator-details">
+            <p class="creator-intro">Una guía creada para explicar cómo se construyen sistemas digitales conectados, flexibles y fáciles de evolucionar.</p>
+            <table class="data-table" aria-label="Datos del creador">
+              <tbody>
+                <tr><th scope="row">Nombre</th><td>Brandon Israel</td></tr>
+                <tr><th scope="row">Apellido</th><td>Lema Gallardo</td></tr>
+                <tr><th scope="row">Email</th><td><a href="mailto:israellema1700@gmail.com">israellema1700@gmail.com</a></td></tr>
+                <tr><th scope="row">Ubicación</th><td>Cotopaxi, Ecuador</td></tr>
+                <tr><th scope="row">Perfil</th><td>Estudiante de Ingeniería de Software y amante de la tecnología y los videojuegos.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer><div class="container"><span>Christian Serrano</span><span>Arquitectura desacoplada · 2026</span></div></footer>
+  <footer><div class="container"><span>Arquitectura desacoplada</span><span>Guía académica interactiva · 2026</span></div></footer>
   <script src="js/script.js" defer></script>
 </body>
 </html>
