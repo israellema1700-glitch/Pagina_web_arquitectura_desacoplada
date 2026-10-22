@@ -316,6 +316,19 @@
               <p class="answer-feedback" id="answer-feedback"></p>
             </div>
             <p class="quiz-progress" id="quiz-progress">Pulsa “Girar la ruleta” para comenzar.</p>
+            <!-- Este diálogo se abre al alcanzar diez respuestas correctas. -->
+            <dialog class="celebration-dialog" id="celebration-dialog" aria-labelledby="celebration-title">
+              <div class="celebration-confetti" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="celebration-content">
+                <p class="celebration-kicker">META ALCANZADA · 10 PUNTOS</p>
+                <h3 id="celebration-title">¡Felicidades!</h3>
+                <p>Has demostrado cuánto sabes sobre arquitectura desacoplada. ¡Sigue explorando!</p>
+                <button class="button" id="close-celebration" type="button">Seguir jugando</button>
+              </div>
+            </dialog>
           </div>
         </div>
       </div>

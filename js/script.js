@@ -1,3 +1,4 @@
+// Temas conectados a las secciones y preguntas disponibles en la ruleta.
 const topics = [
   { id: "que-es", label: "Qué es" },
   { id: "flujo", label: "Cómo funciona" },
@@ -9,6 +10,7 @@ const topics = [
   { id: "sectores", label: "Sectores" }
 ];
 
+// Cada pregunta conserva opciones, índice correcto y explicación inmediata.
 const questionBank = {
   "que-es": [
     {
@@ -138,13 +140,17 @@ const answerList = document.querySelector("#answer-list");
 const answerFeedback = document.querySelector("#answer-feedback");
 const quizProgress = document.querySelector("#quiz-progress");
 const scoreValue = document.querySelector("#scoreboard strong");
+const celebrationDialog = document.querySelector("#celebration-dialog");
+const closeCelebrationButton = document.querySelector("#close-celebration");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 let rotation = 0;
 let score = 0;
 let round = 0;
 let activeQuestion;
 let answered = false;
+let celebrationShown = false;
 
+// Gira hasta un tema al azar y revela una pregunta cuando termina la animación.
 spinButton.addEventListener("click", () => {
   if (spinButton.disabled) return;
 
@@ -180,6 +186,7 @@ spinButton.addEventListener("click", () => {
   window.setTimeout(revealQuestion, reducedMotion.matches ? 30 : 4700);
 });
 
+// La delegación permite comprobar las respuestas que se crean en cada giro.
 answerList.addEventListener("click", (event) => {
   const selectedAnswer = event.target.closest("[data-choice]");
   if (!selectedAnswer || answered || !activeQuestion) return;
@@ -197,8 +204,16 @@ answerList.addEventListener("click", (event) => {
     score += 1;
     scoreValue.textContent = String(score);
     answerFeedback.textContent = `¡Correcto! ${activeQuestion.explanation}`;
+    if (score >= 10 && !celebrationShown) {
+      celebrationShown = true;
+      celebrationDialog.showModal();
+    }
   } else {
     answerFeedback.textContent = `La respuesta correcta está marcada en verde. ${activeQuestion.explanation}`;
   }
   quizProgress.textContent = `Ronda ${round} · ${score} ${score === 1 ? "acierto" : "aciertos"}.`;
+});
+
+closeCelebrationButton.addEventListener("click", () => {
+  celebrationDialog.close();
 });
