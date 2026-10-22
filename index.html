@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090b">
+  <meta name="description" content="Perfil de Christian Serrano y guía interactiva sobre arquitectura desacoplada.">
+  <title>Christian Serrano | Arquitectura desacoplada</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="nav-wrap">
+      <a class="brand" href="#perfil" aria-label="Ir al perfil">
+        <img class="brand-logo" src="img/logo.png" alt="Universidad Técnica de Cotopaxi">
+      </a>
+      <nav aria-label="Navegación principal">
+        <ul>
+          <li><a href="#perfil">Perfil</a></li>
+          <li><a href="#arquitectura">Arquitectura Desacoplada</a></li>
+          <li><a href="#video">Video Explicativo</a></li>
+          <li><a href="#quiz">Quiz Interactivo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="perfil" aria-labelledby="profile-title">
+      <div class="container">
+        <p class="eyebrow">Presentación · 01</p>
+        <h1 id="profile-title">Christian<br>Serrano<span style="color:var(--cyan)">.</span></h1>
+        <p class="lede">Estudiante de Ingeniería de Software, amante de los videojuegos y explorador de las ideas que conectan tecnología y diseño.</p>
+        <div class="profile-grid">
+          <div class="portrait-frame">
+            <img src="img/foto_perfil.png" alt="Fotografía de perfil">
+          </div>
+          <table class="data-table" aria-label="Datos personales">
+            <tbody>
+              <tr><th scope="row">Nombre</th><td>Brandon Israel</td></tr>
+              <tr><th scope="row">Apellido</th><td>Lema Gallardo</td></tr>
+              <tr><th scope="row">Email</th><td><a href="mailto:israellema1700@gmail.com">israellema1700@gmail.com</a></td></tr>
+              <tr><th scope="row">Dirección</th><td>Cotopaxi</td></tr>
+              <tr><th scope="row">Acerca de mí</th><td>Estudiante de Ingeniería de Software, amante de los videojuegos.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="arquitectura" aria-labelledby="architecture-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Sistemas · 02</p>
+          <h2 id="architecture-title">Arquitectura desacoplada</h2>
+          <p class="theory-intro">Un sistema desacoplado organiza la aplicación en componentes con responsabilidades y ciclos de vida propios. En su forma más conocida, la interfaz de usuario y la lógica de negocio residen en aplicaciones separadas, coordinadas mediante contratos explícitos en vez de depender de una implementación interna compartida.</p>
+        </div>
+        <h3>Dos capas. Un contrato claro.</h3>
+        <p class="theory-intro">El frontend presenta la información, gestiona la interacción y consume capacidades. El backend aplica reglas de negocio, valida operaciones, protege los datos y ofrece servicios. La API define qué puede solicitar cada cliente y qué respuesta puede esperar; ese límite reduce el conocimiento mutuo y permite evolucionar cada lado con menor impacto.</p>
+        <div class="architecture-flow" aria-label="Interacción entre frontend y backend mediante una API">
+          <div class="flow-node"><strong>Frontend</strong><span>Presentación, experiencia y estado de interfaz</span></div>
+          <div class="flow-connector"><b aria-hidden="true">↔</b>API / contrato</div>
+          <div class="flow-node"><strong>Backend</strong><span>Reglas de negocio, datos y servicios</span></div>
+        </div>
+        <div class="section-heading">
+          <p class="eyebrow">Comunicación</p>
+          <h3>REST para recursos; WebSockets para tiempo real</h3>
+          <p class="theory-intro">Con REST, el cliente envía solicitudes HTTP a recursos y recibe respuestas, habitualmente en JSON. Es un modelo sencillo de cachear, depurar y escalar. Cuando se necesita comunicación persistente y bidireccional, como en notificaciones o colaboración en vivo, WebSockets permiten intercambiar mensajes sin abrir una nueva solicitud por cada evento. En ambos casos, versiones, autenticación, validación y manejo de errores forman parte del contrato de integración.</p>
+        </div>
+        <div class="benefits">
+          <article class="benefit">
+            <span class="index">01 / ESCALA</span>
+            <h3>Escalabilidad horizontal independiente</h3>
+            <p>Frontend y backend pueden escalar según sus propias cargas. Se pueden servir activos estáticos desde una CDN y añadir instancias de API cuando crece el tráfico de negocio, sin replicar todo el sistema de forma indiscriminada.</p>
+          </article>
+          <article class="benefit">
+            <span class="index">02 / ELECCIÓN</span>
+            <h3>Flexibilidad tecnológica</h3>
+            <p>El cliente y el servidor pueden usar frameworks, lenguajes y ritmos de actualización distintos. Mientras mantengan el contrato acordado, el equipo puede sustituir una implementación sin reescribir necesariamente la otra.</p>
+          </article>
+          <article class="benefit">
+            <span class="index">03 / ENTREGA</span>
+            <h3>Despliegues continuos y zero-downtime</h3>
+            <p>Los componentes pueden publicarse por separado mediante estrategias como despliegues graduales o blue-green. La disponibilidad global se conserva si las versiones siguen siendo compatibles y la infraestructura permite retirar instancias sin cortar el servicio.</p>
+          </article>
+          <article class="benefit">
+            <span class="index">04 / RESILIENCIA</span>
+            <h3>Tolerancia a fallos aislados</h3>
+            <p>Los límites entre servicios ayudan a contener ciertos errores: una falla de interfaz no detiene automáticamente los procesos del servidor. Timeouts, reintentos controlados, circuit breakers y degradación elegante complementan esa separación; el desacoplamiento por sí solo no garantiza resiliencia.</p>
+          </article>
+        </div>
+        <table class="comparison">
+          <thead><tr><th scope="col">Aspecto</th><th scope="col">Desacoplada</th><th scope="col">Monolítica tradicional</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Estructura</th><td>Capas o servicios separados por contratos.</td><td>Capacidades agrupadas en una aplicación desplegable.</td></tr>
+            <tr><th scope="row">Despliegue</th><td>Componentes pueden liberarse de forma independiente.</td><td>Un cambio suele requerir reconstruir y desplegar el conjunto.</td></tr>
+            <tr><th scope="row">Operación</th><td>Más libertad de escala, con mayor esfuerzo de integración.</td><td>Inicio y operación más simples, con dependencias internas más estrechas.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="video" aria-labelledby="video-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">En contexto · 03</p>
+          <h2 id="video-title">Video explicativo</h2>
+          <p class="theory-intro">Una explicación audiovisual de los principios de separación, comunicación y evolución independiente.</p>
+        </div>
+        <div class="video-shell">
+          <video controls preload="metadata" playsinline aria-label="Video explicativo sobre arquitectura desacoplada">
+            <source src="video/video.mp4" type="video/mp4">
+            Tu navegador no admite la reproducción de video. Puedes actualizar el navegador para verlo.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quiz" aria-labelledby="quiz-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Comprueba lo aprendido · 04</p>
+          <h2 id="quiz-title">Quiz interactivo</h2>
+          <p class="theory-intro">Seis preguntas sobre la arquitectura desacoplada, sus canales de comunicación y los conceptos presentados en esta explicación.</p>
+        </div>
+        <form class="quiz-form" id="quiz-form">
+          <fieldset class="question">
+            <legend><span>01</span>¿Qué caracteriza principalmente a una arquitectura desacoplada?</legend>
+            <div class="options">
+              <div class="option"><input id="q1a" type="radio" name="q1" value="a" required><label for="q1a"><span class="option-key">A</span>Frontend y backend comparten una única implementación.</label></div>
+              <div class="option"><input id="q1b" type="radio" name="q1" value="b"><label for="q1b"><span class="option-key">B</span>Presentación y lógica de negocio se separan con contratos explícitos.</label></div>
+              <div class="option"><input id="q1c" type="radio" name="q1" value="c"><label for="q1c"><span class="option-key">C</span>La aplicación deja de necesitar comunicación entre componentes.</label></div>
+              <div class="option"><input id="q1d" type="radio" name="q1" value="d"><label for="q1d"><span class="option-key">D</span>Todos los datos se almacenan dentro del navegador.</label></div>
+            </div>
+          </fieldset>
+          <fieldset class="question">
+            <legend><span>02</span>¿Qué mecanismo encaja mejor con una interacción HTTP basada en recursos?</legend>
+            <div class="options">
+              <div class="option"><input id="q2a" type="radio" name="q2" value="a" required><label for="q2a"><span class="option-key">A</span>REST, mediante solicitudes y respuestas HTTP.</label></div>
+              <div class="option"><input id="q2b" type="radio" name="q2" value="b"><label for="q2b"><span class="option-key">B</span>Una hoja de estilos CSS compartida.</label></div>
+              <div class="option"><input id="q2c" type="radio" name="q2" value="c"><label for="q2c"><span class="option-key">C</span>Un proceso de compilación local.</label></div>
+              <div class="option"><input id="q2d" type="radio" name="q2" value="d"><label for="q2d"><span class="option-key">D</span>Una consulta directa a la base de datos desde la interfaz.</label></div>
+            </div>
+          </fieldset>
+          <fieldset class="question">
+            <legend><span>03</span>¿Cuándo resulta especialmente útil una conexión WebSocket?</legend>
+            <div class="options">
+              <div class="option"><input id="q3a" type="radio" name="q3" value="a" required><label for="q3a"><span class="option-key">A</span>Para intercambiar eventos de forma persistente y bidireccional.</label></div>
+              <div class="option"><input id="q3b" type="radio" name="q3" value="b"><label for="q3b"><span class="option-key">B</span>Para reemplazar todas las reglas de negocio.</label></div>
+              <div class="option"><input id="q3c" type="radio" name="q3" value="c"><label for="q3c"><span class="option-key">C</span>Para convertir CSS en datos JSON.</label></div>
+              <div class="option"><input id="q3d" type="radio" name="q3" value="d"><label for="q3d"><span class="option-key">D</span>Únicamente para servir imágenes estáticas.</label></div>
+            </div>
+          </fieldset>
+          <fieldset class="question">
+            <legend><span>04</span>¿Qué permite la escalabilidad horizontal independiente?</legend>
+            <div class="options">
+              <div class="option"><input id="q4a" type="radio" name="q4" value="a" required><label for="q4a"><span class="option-key">A</span>Añadir capacidad al componente que tiene mayor demanda.</label></div>
+              <div class="option"><input id="q4b" type="radio" name="q4" value="b"><label for="q4b"><span class="option-key">B</span>Evitar que frontend y backend se comuniquen.</label></div>
+              <div class="option"><input id="q4c" type="radio" name="q4" value="c"><label for="q4c"><span class="option-key">C</span>Usar obligatoriamente el mismo framework en todas las capas.</label></div>
+              <div class="option"><input id="q4d" type="radio" name="q4" value="d"><label for="q4d"><span class="option-key">D</span>Eliminar la necesidad de supervisar el sistema.</label></div>
+            </div>
+          </fieldset>
+          <fieldset class="question">
+            <legend><span>05</span>¿Qué condición ayuda a lograr un despliegue sin interrupción global?</legend>
+            <div class="options">
+              <div class="option"><input id="q5a" type="radio" name="q5" value="a" required><label for="q5a"><span class="option-key">A</span>Compatibilidad entre versiones y retirada gradual de instancias.</label></div>
+              <div class="option"><input id="q5b" type="radio" name="q5" value="b"><label for="q5b"><span class="option-key">B</span>Desconectar todos los servicios durante cada publicación.</label></div>
+              <div class="option"><input id="q5c" type="radio" name="q5" value="c"><label for="q5c"><span class="option-key">C</span>Evitar probar los cambios antes de desplegarlos.</label></div>
+              <div class="option"><input id="q5d" type="radio" name="q5" value="d"><label for="q5d"><span class="option-key">D</span>Publicar siempre frontend y backend como un único bloque.</label></div>
+            </div>
+          </fieldset>
+          <fieldset class="question">
+            <legend><span>06</span>¿Cuál es un reto común frente a un monolito tradicional?</legend>
+            <div class="options">
+              <div class="option"><input id="q6a" type="radio" name="q6" value="a" required><label for="q6a"><span class="option-key">A</span>Mayor esfuerzo para coordinar integración y contratos entre componentes.</label></div>
+              <div class="option"><input id="q6b" type="radio" name="q6" value="b"><label for="q6b"><span class="option-key">B</span>Imposibilidad de elegir tecnologías distintas.</label></div>
+              <div class="option"><input id="q6c" type="radio" name="q6" value="c"><label for="q6c"><span class="option-key">C</span>Ausencia total de puntos de comunicación.</label></div>
+              <div class="option"><input id="q6d" type="radio" name="q6" value="d"><label for="q6d"><span class="option-key">D</span>Obligación de desplegar todos los componentes a la vez.</label></div>
+            </div>
+          </fieldset>
+          <div class="quiz-actions">
+            <button class="button" type="submit">Comprobar respuestas</button>
+            <button class="button button-secondary" type="reset">Reiniciar</button>
+          </div>
+          <p class="quiz-result" id="quiz-result" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><span>Christian Serrano</span><span>Arquitectura desacoplada · 2026</span></div></footer>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
